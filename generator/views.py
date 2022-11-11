@@ -1,3 +1,7 @@
 from django.shortcuts import render
+from django.http import HttpResponse
 
-# Create your views here.
+# Parámetro request: recibimos información de la petición que está llegando
+def about(request): 
+    # render lee un archivo y lo devuelve al usuario
+    return render(request, 'generator/about.html')
