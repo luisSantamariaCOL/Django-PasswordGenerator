@@ -1,5 +1,6 @@
-from django.shortcuts import render
 from django.http import HttpResponse
+from django.shortcuts import render
+
 
 def home(request):
     return render(request, 'generator/home.html')
@@ -8,3 +9,6 @@ def home(request):
 def about(request): 
     # render lee un archivo y lo devuelve al usuario
     return render(request, 'generator/about.html')
+
+def password(request):
+    return render(request, 'generator/password.html')
