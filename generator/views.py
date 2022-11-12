@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-
+import random
 
 def home(request):
     return render(request, 'generator/home.html')
@@ -11,4 +11,11 @@ def about(request):
     return render(request, 'generator/about.html')
 
 def password(request):
-    return render(request, 'generator/password.html')
+
+    characters = list('abcdefghijklmnopqrstuvwxyz')
+    generated_password = ''
+
+    for _ in range(10):
+        generated_password += random.choice(characters)
+
+    return render(request, 'generator/password.html', {'password': generated_password})
